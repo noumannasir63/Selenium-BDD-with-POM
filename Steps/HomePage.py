@@ -5,9 +5,12 @@ from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 
+from Features.pages.HomePage import HomePage
+
+
 @given(u'Enter DemoQA Website Address into Browser')
 def step_impl(context):
-    print("Nothing to see here.")
+    context.home_page = HomePage(context.driver)
 
 
 @when(u'User Navigate on the HomePage')
@@ -16,32 +19,32 @@ def step_impl(context):
 
 @when(u'Clicks on the Elements')
 def step_impl(context):
-    context.driver.find_element(By.XPATH, "//div[@class='category-cards']//div[1]//div[1]//div[3]").click()
+    context.home_page.click_elements()
     sleep(3)
 
 @when(u'Clicks on the Forms')
 def step_impl(context):
-    context.driver.find_element(By.XPATH, "//div[@class='category-cards']//div[2]//div[1]//div[3]").click()
+    context.home_page.click_forms()
     sleep(3)
 
 @when(u'Clicks on the Alerts')
 def step_impl(context):
-    context.driver.find_element(By.XPATH, "//div[@class='category-cards']//div[3]//div[1]//div[3]").click()
+    context.home_page.click_alerts()
     sleep(3)
 
 @when(u'Clicks on the Widgets')
 def step_impl(context):
-    context.driver.find_element(By.XPATH, "//div[@class='category-cards']//div[4]//div[1]//div[3]").click()
+    context.home_page.click_widgets()
     sleep(3)
 
 @when(u'Clicks on the Interactions')
 def step_impl(context):
-    context.driver.find_element(By.XPATH, "//div[@class='category-cards']//div[5]//div[1]//div[3]").click()
+    context.home_page.click_interactions()
     sleep(3)
 
 @when(u'Clicks on the Books')
 def step_impl(context):
-    context.driver.find_element(By.XPATH, "//div[@class='category-cards']//div[6]//div[1]//div[3]").click()
+    context.home_page.click_books()
     sleep(3)
 
 
