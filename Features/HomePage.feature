@@ -1,6 +1,5 @@
 Feature: Navigate to HomePage
 
-  @completed
   Scenario: Navigate to DemoQA HomePage and Click on Elements
     Given Enter DemoQA Website Address into Browser
     When User Navigate on the HomePage

@@ -20,6 +20,6 @@ def before_scenario(context,driver):
     context.driver.maximize_window()
     context.driver.get(ConfigReader.read_configuration("basic info","url"))
 
-def after_scenario(context,driver):
+def after_all(context,driver):
     if hasattr(context, 'driver'):
         context.driver.quit()
