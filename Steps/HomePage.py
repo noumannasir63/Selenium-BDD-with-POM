@@ -1,11 +1,7 @@
-from behave import *
 from time import sleep
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.service import Service
 
-from Features.pages.HomePage import HomePage
+from behave import *
+from selenium.webdriver.common.by import By
 
 
 @given(u'Enter DemoQA Website Address into Browser')
@@ -17,30 +13,36 @@ def step_impl(context):
 def step_impl(context):
     context.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
+
 @when(u'Clicks on the Elements')
 def step_impl(context):
     context.home_page.click_elements()
     sleep(3)
+
 
 @when(u'Clicks on the Forms')
 def step_impl(context):
     context.home_page.click_forms()
     sleep(3)
 
+
 @when(u'Clicks on the Alerts')
 def step_impl(context):
     context.home_page.click_alerts()
     sleep(3)
+
 
 @when(u'Clicks on the Widgets')
 def step_impl(context):
     context.home_page.click_widgets()
     sleep(3)
 
+
 @when(u'Clicks on the Interactions')
 def step_impl(context):
     context.home_page.click_interactions()
     sleep(3)
+
 
 @when(u'Clicks on the Books')
 def step_impl(context):

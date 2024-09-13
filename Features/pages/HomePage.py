@@ -1,4 +1,6 @@
 from selenium.webdriver.common.by import By
+
+
 class HomePage:
     def __init__(self, driver):
         self.driver = driver
@@ -16,14 +18,18 @@ class HomePage:
     def click_forms(self):
         self.driver.find_element(By.XPATH, self.forms_xpath).click()
 
-    def click_alerts(self):
-        self.driver.find_element(By.XPATH, self.alerts_xpath).click()
 
-    def click_widgets(self):
-        self.driver.find_element(By.XPATH, self.widgets_xpath).click()
+def click_alerts(self):
+    self.driver.find_element(By.XPATH, self.alerts_xpath).click()
 
-    def click_interactions(self):
-        self.driver.find_element(By.XPATH, self.interactions_xpath).click()
 
-    def click_books(self):
-        self.driver.find_element(By.XPATH, self.books_xpath).click()
+def click_widgets(self):
+    self.driver.find_element(By.XPATH, self.widgets_xpath).click()
+
+
+def click_interactions(self):
+    self.driver.find_element(By.XPATH, self.interactions_xpath).click()
+
+
+def click_books(self):
+    self.driver.find_element(By.XPATH, self.books_xpath).click()
