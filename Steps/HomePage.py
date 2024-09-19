@@ -3,6 +3,8 @@ from time import sleep
 from behave import *
 from selenium.webdriver.common.by import By
 
+from Features.pages.HomePage import HomePage
+
 
 @given(u'Enter DemoQA Website Address into Browser')
 def step_impl(context):
@@ -25,12 +27,12 @@ def step_impl(context):
     context.home_page.click_forms()
     sleep(3)
 
-
+"""
 @when(u'Clicks on the Alerts')
 def step_impl(context):
     context.home_page.click_alerts()
     sleep(3)
-
+"""
 
 @when(u'Clicks on the Widgets')
 def step_impl(context):

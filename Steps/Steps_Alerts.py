@@ -3,7 +3,7 @@ from time import sleep
 from selenium.webdriver.common.by import By
 from Features.pages.POM_Alerts import POMAlerts
 
-
+"""
 @given(u'Enter DemoQA Website Address into Browser')
 def step_impl(context):
     context.alerts_page = POMAlerts(context.driver)
@@ -11,9 +11,10 @@ def step_impl(context):
 @when(u'User Navigate on the HomePage')
 def step_impl(context):
     context.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-
+"""
 @when(u'Clicks on the Alerts')
 def step_impl(context):
+    context.alerts_page=POMAlerts(context.driver)
     context.alerts_page.click_alerts()
     sleep(3)
 """
