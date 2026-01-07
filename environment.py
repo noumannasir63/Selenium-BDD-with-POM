@@ -28,3 +28,6 @@ def before_scenario(context, scenario):
 def after_scenario(context, scenario):
     if hasattr(context, 'driver'):
         context.driver.quit()
+
+        # Jenkins pipeline trigger test
+
