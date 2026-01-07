@@ -1,29 +1,18 @@
-from time import sleep
-
 from behave import *
-from selenium.webdriver.common.by import By
-
 from Features.pages.POM_Common_Steps import CommonSteps
 
 
-@given(u'Enter DemoQA Website Address into Browser')
-def step_impl(context):
-    context.home_page = CommonSteps(context.driver)
+@given('Enter DemoQA Website Address into Browser')
+def step_open_website(context):
+    context.common_page = CommonSteps(context.driver)
 
 
-@when(u'User Navigate on the HomePage')
-def step_impl(context):
+@when('User Navigate on the HomePage')
+def step_navigate_home(context):
     context.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
-"""
-@then(u'Verify that elements window is opened')
-def step_impl(context):
-    element = context.driver.find_element(By.XPATH, "//div[@class='col-12 mt-4 col-md-6']")
-    expected_text = "Please select an item from left to start practice."
 
-    actual_text = element.text
-
-    # Assert that the actual text matches the expected text
-    assert actual_text == expected_text, f"Expected text '{expected_text}', but got '{actual_text}'"
-    
-    """
+@then('Verify that elements window is opened')
+def step_verify_elements_window(context):
+    assert context.common_page.is_elements_window_opened(), \
+        "Elements window is not opened"

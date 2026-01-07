@@ -16,13 +16,14 @@ def before_scenario(context, scenario):
         )
     elif browser_name == "edge":
         options = webdriver.EdgeOptions()
-        context.driver = webdriver.Edge()
+        #options.add_argument("--headless=new")        # <-- headless mode added
+        #options.add_argument("--window-size=1920,1080")
+        context.driver = webdriver.Edge(options=options)
     else:
         raise ValueError(f"Unsupported browser: {browser_name}")
 
     context.driver.maximize_window()
     context.driver.get(ConfigReader.read_configuration("basic info", "url"))
-
 
 def after_scenario(context, scenario):
     if hasattr(context, 'driver'):
