@@ -3,6 +3,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from utilities import ConfigReader
+from selenium.webdriver.edge.options import Options
+
 
 
 def before_scenario(context, scenario):
