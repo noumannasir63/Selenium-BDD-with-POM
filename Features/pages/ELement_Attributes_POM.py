@@ -1,4 +1,7 @@
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+
 
 class Element_Attributes_POM:
     def __init__(self, driver):
@@ -24,7 +27,11 @@ class Element_Attributes_POM:
             self.driver.find_element(By.ID, self.permanent_address).send_keys("Islamabad")
 
     def click_submitBtn(self):
-            self.driver.find_element(By.ID, self.submitBtn).click()
+        submit = WebDriverWait(self.driver, 20).until(
+            EC.presence_of_element_located((By.ID, self.submitBtn))
+        )
+        self.driver.execute_script("arguments[0].scrollIntoView(true);", submit)
+        self.driver.execute_script("arguments[0].click();", submit)
 
     def text_box_click(self):
         self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")

@@ -19,10 +19,10 @@ def before_scenario(context, scenario):
     elif browser_name == "edge":
         options = webdriver.EdgeOptions()
         options = Options()
-        options.add_argument("--headless=new")  # optional but recommended
+        #options.add_argument("--headless=new")  # optional but recommended
         options.add_argument("--window-size=1920,1080")
-        options.add_argument("--disable-notifications")
-        options.add_argument("--disable-infobars")
+        #options.add_argument("--disable-notifications")
+        #options.add_argument("--disable-infobars")
         context.driver = webdriver.Edge(options=options)
     else:
         raise ValueError(f"Unsupported browser: {browser_name}")
